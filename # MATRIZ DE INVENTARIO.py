@@ -1,4 +1,3 @@
-# MATRIZ DE INVENTARIO
 inventario = [
     ["A101", "Teclado", 5, 10],
     ["A102", "Mouse", 15, 10],
@@ -7,22 +6,18 @@ inventario = [
     ["A105", "USB", 2, 5]
 ]
 
-# FUNCIÓN PARA CALCULAR LA CANTIDAD A PEDIR
+
 def calcular_pedido(stock_actual, stock_minimo):
 
-    # Si el stock actual es menor al mínimo
     if stock_actual < stock_minimo:
         return stock_minimo - stock_actual
 
-    # Si el stock es suficiente
     else:
         return 0
 
 
-# ENCABEZADO DEL REPORTE
 print("===== REPORTE DE REABASTECIMIENTO =====\n")
 
-# RECORRER LA MATRIZ
 for articulo in inventario:
 
     codigo = articulo[0]
@@ -30,10 +25,8 @@ for articulo in inventario:
     stock_actual = articulo[2]
     stock_minimo = articulo[3]
 
-    # LLAMADO DE LA FUNCIÓN
     cantidad_pedir = calcular_pedido(stock_actual, stock_minimo)
 
-    # MOSTRAR RESULTADOS
     print("Código:", codigo)
     print("Artículo:", nombre)
     print("Stock Actual:", stock_actual)
